@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\Authors;
 use backend\models\Books;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -89,6 +90,7 @@ class BooksController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'authors' => Authors::find()->all(),
         ]);
     }
 

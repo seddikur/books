@@ -2,9 +2,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
 /** @var backend\models\Books $model */
+/** @var backend\models\Authors $authors */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
@@ -14,9 +16,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'author_id')->textInput() ?>
+    <?= $form->field($model, 'author_id')->dropDownList(
+        ArrayHelper::map($authors, 'id', 'surname')
+    ) ?>
 
     <?= $form->field($model, 'year')->textInput(['maxlength' => true]) ?>
 

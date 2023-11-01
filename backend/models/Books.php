@@ -9,7 +9,6 @@ use Yii;
  *
  * @property int $id
  * @property string $title Название
- * @property string $name Имя
  * @property int $author_id Автор
  * @property string|null $year Год
  * @property int $pages Кол-во страниц
@@ -32,9 +31,9 @@ class Books extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'name', 'author_id', 'pages'], 'required'],
+            [['title', 'author_id', 'pages'], 'required'],
             [['author_id', 'pages'], 'integer'],
-            [['title', 'name'], 'string', 'max' => 100],
+            [['title'], 'string', 'max' => 100],
             [['year'], 'string', 'max' => 30],
             [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => Authors::class, 'targetAttribute' => ['author_id' => 'id']],
         ];
@@ -48,7 +47,6 @@ class Books extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Название',
-            'name' => 'Имя',
             'author_id' => 'Автор',
             'year' => 'Год',
             'pages' => 'Кол-во страниц',

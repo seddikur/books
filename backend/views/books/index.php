@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title',
-            'name',
             'author_id',
             'year',
             //'pages',

@@ -20,7 +20,6 @@ class m231101_132104_create_table_books extends Migration
         $this->createTable('{{%books}}', [
             'id' => $this->primaryKey(),
             'title' => $this->string(100)->notNull()->comment('Название'),
-            'name' => $this->string(100)->notNull()->comment('Имя'),
             'author_id' => $this->integer()->notNull()->comment('Автор'),
             'year' => $this->string(30)->comment('Год'),
             'pages' => $this->integer()->notNull()->comment('Кол-во страниц')
