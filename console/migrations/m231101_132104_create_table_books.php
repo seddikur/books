@@ -21,13 +21,18 @@ class m231101_132104_create_table_books extends Migration
             'id' => $this->primaryKey(),
             'title' => $this->string(100)->notNull()->comment('Название'),
             'author_id' => $this->integer()->notNull()->comment('Автор'),
-            'year' => $this->string(30)->comment('Год'),
+            'publish_year' => $this->integer(11)->notNull()->comment('Год'),
             'pages' => $this->integer()->notNull()->comment('Кол-во страниц')
         ], $tableOptions);
 
         $this->createIndex('author_id', 'books', 'author_id');
 
-        $this->addForeignKey('fk_books_author_id', 'books', 'author_id', 'authors', 'id');
+        $this->addForeignKey(
+            'fk_books_author_id',
+            'books',
+            'author_id',
+            'authors',
+            'id');
     }
 
     /**

@@ -1,2 +1,4 @@
 admin
 qwertyui
+
+тест vendor/bin/codecept run

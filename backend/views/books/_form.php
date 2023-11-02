@@ -20,7 +20,7 @@ use yii\helpers\ArrayHelper;
         ArrayHelper::map($authors, 'id', 'surname')
     ) ?>
 
-    <?= $form->field($model, 'year')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'publish_year')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'pages')->textInput() ?>
 
