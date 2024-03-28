@@ -12,21 +12,21 @@ class m231102_073936_seed_book_table extends Migration
      */
     public function safeUp()
     {
-//        {
-//            $faker = \Faker\Factory::create();
-//            for ($i = 0; $i < 50; $i++) {
-//                $this->insert(
-//                    'books',
-//                    [
-//                        'title'         => $faker->catchPhrase,
-//                        'publish_year' => (int)$faker->year,
-//                        'author_id'  => (int)rand(1, 20),
-//                        //'created_at' => (new \yii\db\Expression('NOW()')),
-//                        'pages' =>(int)rand(1, 300),
-//                    ]
-//                );
-//            }
-//        }
+        {
+            $faker = \Faker\Factory::create();
+            for ($i = 0; $i < 50; $i++) {
+                $this->insert(
+                    'books',
+                    [
+                        'title'         => $faker->catchPhrase,
+                        'publish_year' => (int)$faker->year,
+                        'author_id'  => (int)rand(1, 20),
+                        //'created_at' => (new \yii\db\Expression('NOW()')),
+                        'pages' =>(int)rand(1, 300),
+                    ]
+                );
+            }
+        }
     }
 
     /**
